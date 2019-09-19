@@ -47,4 +47,9 @@ select *from countries where name in ("sweden","japan","france","germany");
 select *from car_makers where country not in (2,3,4,6);
  
  --- 11.List all cars where the make starts with an a and ends with an r.
+ 
+select *from models where name like "a%r";
+  
  --- 12.How many cars have more than 6 cylinders, weight less than 4000 but more than 3000, and was not made in the years 1970, 1975 or 1981.
+
+select count(*) from cars_data where cylinders > 6 and weight between 3000 and 4000 and year not in (1970,1975,1981);
