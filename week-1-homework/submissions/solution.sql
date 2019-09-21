@@ -6,7 +6,7 @@ select make from car_names where id in (307,403);
 
 --- 2.List the weight of the cars made in the 1980s (1980 and later).
 
-select weight from cars_data where year>=1980;
+select weight from cars_data where year between 1980 and 1989;
 
 --- 3.List all the cars made by chevrolet (where the model is chevrolet).
 
@@ -34,7 +34,7 @@ select maker from car_makers where maker like "s%";
 
 --- 8.How many cars have a horsepower more than 100 but less than 200?
 
-select count(*) from cars_data where horsepower between 100 and 200;
+select count(*) from cars_data where horsepower >100 and horsepower <200;
 
 --- 9.List all car makers from australia.
 
@@ -52,4 +52,4 @@ select *from models where name like "a%r";
   
  --- 12.How many cars have more than 6 cylinders, weight less than 4000 but more than 3000, and was not made in the years 1970, 1975 or 1981.
 
-select count(*) from cars_data where cylinders > 6 and weight between 3000 and 4000 and year not in (1970,1975,1981);
+select count(*) from cars_data where cylinders > 6 and weight > 3000 and  weight > 4000 and year not in (1970,1975,1981);
